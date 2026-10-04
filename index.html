@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seven</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="scene"></canvas>
+
+    <div id="hud">
+      <div class="meter-wrap">
+        <div class="meter-label">CORRUPTION</div>
+        <div class="meter">
+          <div id="meter-fill" class="meter-fill"></div>
+        </div>
+      </div>
+      <div id="status-text" class="status-text"></div>
+    </div>
+
+    <div id="temptation" class="panel hidden">
+      <div id="temptation-sin" class="sin-name"></div>
+      <div id="temptation-text" class="sin-text"></div>
+      <div class="choices">
+        <button id="choice-succumb" class="choice succumb">Give in</button>
+        <button data-activity="read" class="choice">📖 Read a book</button>
+        <button data-activity="run" class="choice">🏃 Go for a run</button>
+        <button data-activity="pushup" class="choice">💪 Do push-ups</button>
+        <button data-activity="podcast" class="choice">🎧 Listen to a podcast</button>
+      </div>
+    </div>
+
+    <div id="gameover" class="panel hidden">
+      <div class="gameover-title">YOUR SOUL IS TAKEN</div>
+      <div class="gameover-sub">You gave in once too often.</div>
+      <div id="gameover-stats" class="gameover-stats"></div>
+      <button id="restart" class="choice succumb">Try again</button>
+    </div>
+
+    <div id="intro" class="panel">
+      <div class="gameover-title">SEVEN</div>
+      <div class="gameover-sub">
+        You are alone in your room. Thoughts will come, one of the seven sins,
+        trying to possess you. Give in, and the bar fills. Fill it, and a demon
+        takes your soul. Resist with something else: read, run, push-ups, or a podcast.
+      </div>
+      <button id="start" class="choice succumb">Begin</button>
+    </div>
+  </div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three/build/three.module.js",
+        "three/addons/": "./vendor/three/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
