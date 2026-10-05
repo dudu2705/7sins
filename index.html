@@ -9,6 +9,9 @@
 <body>
   <div id="app">
     <canvas id="scene"></canvas>
+    <div id="vignette"></div>
+    <div id="hurt"></div>
+    <div id="grain"></div>
 
     <div id="hud">
       <div class="meter-wrap">
@@ -25,26 +28,35 @@
       <div id="temptation-text" class="sin-text"></div>
       <div class="choices">
         <button id="choice-succumb" class="choice succumb">Give in</button>
-        <button data-activity="read" class="choice">📖 Read a book</button>
-        <button data-activity="run" class="choice">🏃 Go for a run</button>
-        <button data-activity="pushup" class="choice">💪 Do push-ups</button>
-        <button data-activity="podcast" class="choice">🎧 Listen to a podcast</button>
+        <button data-activity="read" class="choice">Read a book</button>
+        <button data-activity="run" class="choice">Run into the night</button>
+        <button data-activity="pushup" class="choice">Do push-ups</button>
+        <button data-activity="podcast" class="choice">Listen to a podcast</button>
       </div>
     </div>
 
+    <div id="challenge" class="panel hidden">
+      <div id="challenge-title" class="sin-name"></div>
+      <div id="challenge-hint" class="sin-text"></div>
+      <div class="timebar"><div id="timebar-fill"></div></div>
+      <div id="challenge-body"></div>
+    </div>
+
     <div id="gameover" class="panel hidden">
-      <div class="gameover-title">YOUR SOUL IS TAKEN</div>
-      <div class="gameover-sub">You gave in once too often.</div>
+      <div class="gameover-title">YOU HAVE WITHERED</div>
+      <div class="gameover-sub">The sins hollowed you out until nothing was left to fight for.</div>
       <div id="gameover-stats" class="gameover-stats"></div>
-      <button id="restart" class="choice succumb">Try again</button>
+      <button id="restart" class="choice succumb">Rise again</button>
     </div>
 
     <div id="intro" class="panel">
       <div class="gameover-title">SEVEN</div>
       <div class="gameover-sub">
-        You are alone in your room. Thoughts will come, one of the seven sins,
-        trying to possess you. Give in, and the bar fills. Fill it, and a demon
-        takes your soul. Resist with something else: read, run, push-ups, or a podcast.
+        You are alone in a cold chamber. The seven sins whisper, and every time
+        you give in, your body withers: thinner, weaker, emptier. Fill the bar
+        and you are gone.<br /><br />
+        Resist by doing something better with your hands: read, run, train, or
+        listen. But each one demands focus. Fail the task and the sin takes hold anyway.
       </div>
       <button id="start" class="choice succumb">Begin</button>
     </div>
